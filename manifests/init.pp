@@ -28,7 +28,8 @@ class java {
 		alias => "untar-java",
 		refreshonly => true,
 		subscribe => File["java-source-tgz"],
-		before => File["java-app-dir"]
+		before => File["java-app-dir"],
+		path => "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
 	}
 	
 	file { "${java::params::java_base}/jdk${java::params::java_version}":
